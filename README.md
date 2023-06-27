@@ -1,4 +1,5 @@
 # Task
+Please follow the steps and copy paste the commands in terminal(cmd)
 #step 1:Clone the Repository:
 COMMAND: git clone https://github.com/Cheshta1828/Task
 #step 2:Install Dependencies:
