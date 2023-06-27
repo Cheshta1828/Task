@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+
+        
+
+        .login-button {
+            display: inline-block;
+            padding: 12px 20px 3px 4px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .logoutbutton {
+            display: inline-block;
+            padding: 14px 85px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            position: absolute;
+            top: 6px;
+            right: 0px;
+        }
+        .login-button:hover {
+            background-color: #45a049;
+        }
+        .header {
+            position: relative;
+        }
+        
+        .top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .formclass{
+            padding: 43px 24px 20px 39px;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    {% csrf_token %}
+    <form method="post" action="/createorder/{{id}}" class="formclass">
+        {% csrf_token %}
+        <label for="id_order_date">Order Date:</label>
+        <input type="date" id="id_order_date" name="order_date" required>
+        <br>
+        <label for="id_company">Company:</label>
+        <input type="text" id="id_company" name="company" maxlength="50" required pattern="[A-Za-z0-9]+" title="Only alphanumeric characters are allowed.">
+        <br>
+        <label for="id_owner">Owner:</label>
+        <input type="text" id="id_owner" name="owner" maxlength="50" required pattern="[A-Za-z0-9]+" title="Only alphanumeric characters are allowed.">
+        <br>
+        <label for="id_item">Item:</label>
+        <input type="text" id="id_item" name="item" maxlength="100" required>
+        <br>
+        <label for="id_quantity">Quantity:</label>
+        <input type="number" id="id_quantity" name="quantity" required>
+        <br>
+        <label for="id_weight">Weight:</label>
+        <input type="number" step="0.01" id="id_weight" name="weight" required>
+        <br>
+        <label for="id_request_for_shipment">Request for Shipment:</label>
+        <input type="text" id="id_request_for_shipment" name="request_for_shipment" maxlength="200" required>
+        <br>
+        <label for="id_tracking_id">Tracking ID:</label>
+        <input type="text" id="id_tracking_id" name="tracking_id" maxlength="50" required>
+        <br>
+        <label for="id_shipment_size">Shipment Size:</label>
+        <input type="text" id="id_shipment_size" name="shipment_size" maxlength="50" required pattern="[0-9]+[\\*][0-9]+[\\*][0-9]+" title="Format: L*B*H">
+        <br>
+        <label for="id_box_count">Box Count:</label>
+        <input type="number" id="id_box_count" name="box_count" required>
+        <br>
+        <label for="id_specification">Specification:</label>
+        <textarea id="id_specification" name="specification" required></textarea>
+        <br>
+        <label for="id_checklist_quantity">Checklist Quantity:</label>
+        <input type="text" id="id_checklist_quantity" name="checklist_quantity" maxlength="200" required>
+        <br>
+        <input type="submit" class="login-button" value="Create">
+    </form>
+   
+        
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="logoutbutton">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="login-button">Login</a>
+            {% endif %}
+        
+    
+    
+</body>
+</html>

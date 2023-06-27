@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+        
+
+        .login-button {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+          
+            /* Styles for positioning */
+            position: absolute;
+            top: 20px;
+            right: 20px;
+          }
+          
+
+        .login-button:hover {
+            background-color: #45a049;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    
+    {% if user.is_authenticated %}
+    
+    <table>
+       
+        <tr>
+            <th>Item</th>
+            <th>Customer 1</th>
+            <th>Customer 2</th>
+            <th>Total</th>
+        </tr>
+        
+        <tr>
+            <td>Quantity</td>
+            <td>{{customer1_quantity}}</td>
+            <td>{{customer2_quantity}}</td>
+            <td>{{total_quantity}}</td>
+        </tr>
+        
+        <tr>
+            <td>Weight</td>
+            <td>{{ customer1_weight }}</td>
+            <td>{{ customer2_weight }}</td>
+            <td>{{ total_weight }}</td>
+        </tr>
+        
+        <tr>
+            <td>Boxcount</td>
+            <td>{{ customer1_boxcount }}</td>
+            <td>{{ customer2_boxcount }}</td>
+            <td>{{ total_boxcount }}</td>
+        </tr>
+        
+    </table>
+    {% else %}
+            <a href="{% url 'login' %}" class="login-button">Login</a>
+        
+    {% endif %}
+    {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="login-button">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}" class="login-button">Login</a>
+        {% endif %}
+</body>
+</html>
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
