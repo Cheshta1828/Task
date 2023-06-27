@@ -1,6 +1,6 @@
 # Task
 #step 1:Clone the Repository:
-COMMAND: 
+COMMAND: git clone https://github.com/Cheshta1828/Task
 #step 2:Install Dependencies:
 COMMAND :  pip install -r requirements.txt
 #step 3:change directory to task
@@ -16,7 +16,10 @@ myenv\Scripts\activate
 #step6:DATABASE SETUP
 update the database settings in the project's settings.py file.
 Provide details such as the MySQL database engine, name, user, password, host, and port to be used.
-#step 7:Make the necessary migrations
+#step7:create 3 dummy users 
+python manage.py create_dummy_users 
+COMMAND:
+#step 8:Make the necessary migrations
 COMMAND: python manage.py makemigrations
 COMMAND: python manage.py migrate
 #step 8: run the server 
